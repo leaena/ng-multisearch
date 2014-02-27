@@ -13,13 +13,6 @@ angular.module("multiSearch", [])
     $scope.terms = terms;
     if(terms) $scope.parse();
   });
-  $scope.searchFilter = function(stem){
-
-      return function(item){
-        return item.match(stem);
-      }
-
-  }
   $scope.parse = function(){
     var length = $scope.terms.length;
     var last = $scope.terms[length-1];
