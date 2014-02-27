@@ -8,7 +8,7 @@ angular.module("multiSearch", [])
     var parts = newValue.match(/(\w+(?::|$)(?: ?\b\w+\b(?!:))*)+/g);
     if (parts) terms = parts.map(function (p) {
       return p.split(':').map(function (s) {
-        return s.trim()
+        return s.trim();
       });
     });
     $scope.terms = terms;
