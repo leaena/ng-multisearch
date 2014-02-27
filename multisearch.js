@@ -5,7 +5,11 @@ angular.module("multiSearch", [])
   $scope.$watch('search', function(newValue){
     var terms = null;
     var parts = newValue.match(/(\w+(?::|$)(?: ?\b\w+\b(?!:))*)+/g);
-    if (parts) terms = parts.map(function (p) { return p.split(':'); });
+    if (parts) terms = parts.map(function (p) {
+      return p.split(':').map(function (s) {
+        return s.trim();
+      });
+    });
     $scope.terms = terms;
     if(terms) $scope.parse();
   });
