@@ -1,9 +1,9 @@
 angular.module("multiSearch", [])
 .controller("multiSearch", function($scope){
   $scope.search = '';
-  $scope.$watch('search', function(){
-    console.log(this);
-  })
+  $scope.$watch('search', function(newValue){
+
+  });
 })
 .directive('multisearch', function(){
   return {
