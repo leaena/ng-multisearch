@@ -8,6 +8,9 @@
     <script src="dev.js"></script>
   </head>
   <body ng-app="multiSearch.dev">
-    <multisearch ng-model="data"></multisearch>
+    <multisearch facets="data" ng-model="query"></multisearch>
+    <ul>
+      <li ng-repeat="q in query">{{q[0]}} => {{q[1]}}</li>
+    </ul>
   </body>
 </html>
