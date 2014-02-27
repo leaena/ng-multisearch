@@ -1,10 +1,13 @@
 angular.module("multiSearch", [])
 .controller("multiSearch", function($scope){
-  $scope.categories = {user: ["one", "two", "three"], location: ["SF", "HI", "OR"]}
+  $scope.search = '';
+  $scope.$watch('search', function(){
+    console.log(this);
+  })
 })
 .directive('multisearch', function(){
   return {
-    link: function (scope, elem, attrs) {
+    link: function (scope, elem, attrs, controller) {
     },
     controller: 'multiSearch',
     templateUrl: 'search.html',
