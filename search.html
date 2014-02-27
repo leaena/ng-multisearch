@@ -1,9 +1,10 @@
 <input ng-model="search"></input>
 <ul>
-  <li ng-repeat="category in $root.data">
-    {{ category }}
+  <li ng-repeat="item in $root.data | filter:searchFilter(item)">
+   {{ item }}
   </li>
 </ul>
+{{ results }}
 <ul>
   <li ng-repeat="t in terms">
   {{ t }}
