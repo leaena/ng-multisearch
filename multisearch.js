@@ -21,10 +21,10 @@ angular.module("multiSearch", [])
         var last = scope.model[length-1];
         if(last[1]){
           scope.stem = last[1];
-          scope.completions = scope.facets()[last[0]];
+          scope.completions = scope.facets[last[0]];
         } else {
           scope.stem = last[0];
-          scope.completions = Object.keys(scope.facets());
+          scope.completions = Object.keys(scope.facets);
         }
       };
     },
@@ -33,7 +33,7 @@ angular.module("multiSearch", [])
     require: 'ngModel',
     restrict: 'E',
     scope: {
-      facets: '&',
+      facets: '=',
       model: '=ngModel'
     }
   }
