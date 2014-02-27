@@ -1,5 +1,5 @@
 angular.module("multiSearch", [])
-.controller("multiSearch", function($scope){
+.controller("multiSearch", function($scope, $rootScope){
   $scope.search = '';
   $scope.results = '';
   $scope.$watch('search', function(newValue){
@@ -9,23 +9,22 @@ angular.module("multiSearch", [])
     $scope.terms = terms;
     if(terms) $scope.parse();
   });
-  $scope.searchFilter = function(){
-    if($scope.value){
+  $scope.searchFilter = function(stem){
+
       return function(item){
-        return $scope.results === item
+        return item.match(stem);
       }
-    }
 
   }
   $scope.parse = function(){
     var length = $scope.terms.length;
     var last = $scope.terms[length-1];
     if(last[1]){
-      $scope.value = true;
-      $scope.results = last[1];
+      $scope.stem = last[1];
+      $scope.completions = $rootScope.data[last[0]];
     } else {
-      $scope.value = false;
-      $scope.results = last[0];
+      $scope.stem = last[0];
+      $scope.completions = Object.keys($rootScope.data);
     }
   }
 })

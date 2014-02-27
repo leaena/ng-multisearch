@@ -1,12 +1,7 @@
 <input ng-model="search"></input>
 <ul>
-  <li ng-repeat="item in $root.data | filter:searchFilter(item)">
+  <li ng-repeat="item in completions | filter:searchFilter(stem)">
    {{ item }}
   </li>
 </ul>
 {{ results }}
-<ul>
-  <li ng-repeat="t in terms">
-  {{ t }}
-  </li>
-</ul>
