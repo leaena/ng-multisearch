@@ -1,6 +1,6 @@
 <input ng-model="search"></input>
 <ul>
-  <li ng-repeat="item in completions | filter:searchFilter(stem)">
+  <li ng-repeat="item in completions | filter:stem">
    {{ item }}
   </li>
 </ul>
