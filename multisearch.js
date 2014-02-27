@@ -4,6 +4,14 @@ angular.module("multiSearch", [])
 })
 .directive('multisearch', function(){
   return {
-    templateUrl: 'search.html'
+    link: function (scope, elem, attrs) {
+    },
+    controller: 'multiSearch',
+    templateUrl: 'search.html',
+    require: 'ngModel',
+    restrict: 'E',
+    scope: {
+      categories: '=ngModel'
+    }
   }
 })

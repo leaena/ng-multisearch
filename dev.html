@@ -3,10 +3,11 @@
   <head>
     <title>Angular Faceted Search</title>
     <meta charset="UTF-8"></meta>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="lib/vendor/angular.js"></script>
     <script src="multisearch.js"></script>
+    <script src="dev.js"></script>
   </head>
-  <body ng-controller="multiSearch">
-    <multisearch></multisearch>
+  <body ng-app="multiSearch.dev">
+    <multisearch ng-model="data"></multisearch>
   </body>
 </html>
