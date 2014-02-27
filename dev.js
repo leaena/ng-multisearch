@@ -4,6 +4,10 @@ angular.module('multiSearch.dev', ['multiSearch'])
     State: [
       'New York',
       'California'
+    ],
+    User: [
+      'Me',
+      'You'
     ]
   };
 })

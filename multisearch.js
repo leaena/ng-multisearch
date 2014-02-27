@@ -1,9 +1,14 @@
 angular.module("multiSearch", [])
 .controller("multiSearch", function($scope){
   $scope.search = '';
+  $scope.results = [];
+  $scope.parts = ["Sta", "New York"];
   $scope.$watch('search', function(newValue){
-
+    $scope.parse();
   });
+  $scope.parse = function(){
+
+  }
 })
 .directive('multisearch', function(){
   return {

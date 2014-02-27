@@ -1,2 +1,6 @@
 <input ng-model="search"></input>
-{{results}}
+<ul>
+  <li ng-repeat="category in $root.data">
+  {{ category}}
+  </li>
+</ul>
